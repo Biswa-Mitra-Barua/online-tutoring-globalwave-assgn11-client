@@ -22,7 +22,7 @@ const NavBar = () => {
                 {/* Nav Links */}
                 <div className='hidden md:flex space-x-6'>
                     <NavLink to='/' activeClassName="text-sky-500 font-semibold" className="text-gray-600 hover:text-sky-500 transition-colors">Home</NavLink>
-                    <NavLink to='/findTutors' activeClassName="text-sky-500 font-semibold" className="text-gray-600 hover:text-sky-500 transition-colors">Find Tutors</NavLink>
+                    <NavLink to='/find-tutors' activeClassName="text-sky-500 font-semibold" className="text-gray-600 hover:text-sky-500 transition-colors">Find Tutors</NavLink>
                     <NavLink to='/addTutorials' activeClassName="text-sky-500 font-semibold" className="text-gray-600 hover:text-sky-500 transition-colors">Add Tutorials</NavLink>
                     <NavLink to='/myTutorials' activeClassName="text-sky-500 font-semibold" className="text-gray-600 hover:text-sky-500 transition-colors">My Tutorials</NavLink>
                     <NavLink to='/myBookedTutors' activeClassName="text-sky-500 font-semibold" className="text-gray-600 hover:text-sky-500 transition-colors">My Booked Tutors</NavLink>
