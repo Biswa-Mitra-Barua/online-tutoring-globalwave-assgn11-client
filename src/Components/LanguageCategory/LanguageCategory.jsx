@@ -8,7 +8,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/Bangla.avif"
+                        src="/LanguageImage/Bangla.avif"
                         alt="Bangla" />
                 </figure>
                 <div className="card-body">
@@ -23,7 +23,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/English.jpg"
+                        src="/LanguageImage/English.jpg"
                         alt="English" />
                 </figure>
                 <div className="card-body">
@@ -38,7 +38,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/Chinese.jpg"
+                        src="/LanguageImage/Chinese.jpg"
                         alt="Chinese" />
                 </figure>
                 <div className="card-body">
@@ -53,7 +53,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/Arabic.jpg"
+                        src="/LanguageImage/Arabic.jpg"
                         alt="Arabic" />
                 </figure>
                 <div className="card-body">
@@ -67,7 +67,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/Spanish.jpg"
+                        src="/LanguageImage/Spanish.jpg"
                         alt="Spanish" />
                 </figure>
                 <div className="card-body">
@@ -81,7 +81,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/Russian.jpg"
+                        src="/LanguageImage/Russian.jpg"
                         alt="Russian" />
                 </figure>
                 <div className="card-body">
@@ -95,7 +95,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/French.jpg"
+                        src="/LanguageImage/French.jpg"
                         alt="French" />
                 </figure>
                 <div className="card-body">
@@ -109,7 +109,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/Hindi.jpg"
+                        src="/LanguageImage/Hindi.jpg"
                         alt="Hindi" />
                 </figure>
                 <div className="card-body">
@@ -123,7 +123,7 @@ const LanguageCategory = () => {
             <div className="card items-center card-side bg-base-100 shadow-xl">
                 <figure>
                     <img className='w-20 h-20 rounded-full'
-                        src="/public/LanguageImage/Germany.jpg"
+                        src="/LanguageImage/Germany.jpg"
                         alt="Germany" />
                 </figure>
                 <div className="card-body">
