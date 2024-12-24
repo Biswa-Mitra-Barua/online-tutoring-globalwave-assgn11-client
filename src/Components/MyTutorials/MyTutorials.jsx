@@ -5,8 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 const MyTutorials = () => {
     const { user } = useContext(authContext);
    
-    const loadedTutorials = useLoaderData();
-    const [tutorials, setTutorials] = useState(loadedTutorials);
+    const [tutorials, setTutorials] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -19,8 +18,7 @@ const MyTutorials = () => {
             }
 
             try {
-                console.log(user.email)
-                const response = await fetch(`http://localhost:5000/tutors?email=${encodeURIComponent(user.email)}`);
+                const response = await fetch(`http://localhost:5000/tutors?email=${user.email}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch tutorials');
                 }
@@ -36,7 +34,7 @@ const MyTutorials = () => {
         };
 
         userSpecificTutorials();
-    }, [user]);
+    }, [user.email]);
 
     if (loading) {
         return <div className="text-center"><span className="loading loading-bars loading-lg"></span></div>;
@@ -48,16 +46,19 @@ const MyTutorials = () => {
 
 
     return (
-        <div>
+        <div className='w-11/12 mx-auto'>
             <div className="overflow-x-auto">
                 <table className="table">
 
-                    <thead className='font-bold text-cyan-300 text-sm'>
+                    <thead className='font-bold text-cyan-700 text-sm'>
                         <tr>
                             <th>Sl No.</th>
                             <th>Name</th>
-                            <th>Category</th>
+                            <th>Image</th>
+                            <th>Language</th>
                             <th>Price</th>
+                            <th>Description</th>
+                            <th>Review</th>
                             <th>Action</th>
                             <th>Action</th>
                         </tr>
@@ -69,8 +70,11 @@ const MyTutorials = () => {
                                 <tr key={tutorial._id}>
                                     <th>{index + 1}</th>
                                     <td>{tutorial.name}</td>
+                                    <td><img className='w-12 h-12 rounded-full' src={tutorial.image} alt="" /></td>
                                     <td>{tutorial.language}</td>
-                                    <td>{tutorial.price}</td>
+                                    <td>${tutorial.price}</td>
+                                    <td>{tutorial.description}</td>
+                                    <td>{tutorial.review}</td>
                                     <td>
                                         {/* <Link to={`/updateEquipment/${_id}`}> */}
                                             <button className="btn btn-primary">Update</button>

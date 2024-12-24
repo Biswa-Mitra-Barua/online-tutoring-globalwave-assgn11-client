@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const AddTutorials = () => {
     const { user } = useContext(authContext);
+    const navigate = useNavigate();
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -34,6 +36,7 @@ const AddTutorials = () => {
                         title: "Great...",
                         text: "Tutorial Added Successfully!",
                     })
+                    navigate('/myTutorials')
                 }
             })
     }
