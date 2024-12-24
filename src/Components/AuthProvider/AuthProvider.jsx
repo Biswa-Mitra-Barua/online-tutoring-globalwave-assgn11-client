@@ -50,6 +50,7 @@ const AuthProvider = ({ routes }) => {
             else{
                 setUser(null);
             }
+            setLoading(false)
         })
         return ()=> {
             unSubscribe();

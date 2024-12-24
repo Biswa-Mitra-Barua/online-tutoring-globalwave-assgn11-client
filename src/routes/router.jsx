@@ -10,6 +10,9 @@ import FindTutors from '../Components/FindTutors/FindTutors';
 import AddTutorials from '../Components/AddTutorials/AddTutorials';
 import MyTutorials from '../Components/MyTutorials/MyTutorials';
 import MyBookedTutors from '../Components/MyBookedTutors/MyBookedTutors';
+import UpdateTutorials from '../Components/UpdateTutorials/UpdateTutorials';
+import PrivateRoute from '../Components/PrivateRoute/PrivateRoute';
+import TutorDetails from '../Components/TutorDetails/TutorDetails';
 
 const router = createBrowserRouter([
     {
@@ -22,19 +25,37 @@ const router = createBrowserRouter([
             },
             {
                 path: 'find-tutors',
-                element: <FindTutors></FindTutors>
+                element: <FindTutors></FindTutors>,
+                loader: () => fetch('http://localhost:5000/tutors')
+            },
+            {
+                path: 'tutor/:details',
+                element: <PrivateRoute>
+                    <TutorDetails></TutorDetails>,
+                </PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/tutors/${params.details}`)
             },
             {
                 path: 'addTutorials',
-                element: <AddTutorials></AddTutorials>
+                element: <PrivateRoute>
+                    <AddTutorials></AddTutorials>,
+                </PrivateRoute>,
+            },
+            {
+                path: 'updateTutorials',
+                element: <UpdateTutorials></UpdateTutorials>
             },
             {
                 path: 'myTutorials',
-                element: <MyTutorials></MyTutorials>
+                element: <PrivateRoute>
+                    <MyTutorials></MyTutorials>,
+                </PrivateRoute>,
             },
             {
                 path: 'myBookedTutors',
-                element: <MyBookedTutors></MyBookedTutors>
+                element: <PrivateRoute>
+                    <MyBookedTutors></MyBookedTutors>,
+                </PrivateRoute>,
             },
             {
                 path: 'register',

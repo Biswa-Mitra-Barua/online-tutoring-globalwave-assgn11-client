@@ -5,7 +5,7 @@ import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const NavBar = () => {
     const { user, handleLogout } = useContext(authContext);
-    console.log(user)
+    // console.log(user)
     const [showUserName, setShowUserName] = useState(false);
 
     const handleUserName = () => {

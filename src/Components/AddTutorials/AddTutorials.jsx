@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddTutorials = () => {
     const { user } = useContext(authContext);
@@ -7,12 +8,35 @@ const AddTutorials = () => {
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
+        const name = form.tutorName.value;
+        const email = form.tutorEmail.value;
         const image = form.image.value;
         const language = form.language.value;
         const price = form.price.value;
         const description= form.description.value;
         const review = form.review.value;
-        console.log(image, language, price, description, review)
+        const newTutor = {name, email, image, language, price, description, review}
+        console.log(newTutor);
+
+        //sending data to the server
+        fetch('http://localhost:5000/tutors', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newTutor)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.insertedId){
+                    Swal.fire({
+                        icon: "success",
+                        title: "Great...",
+                        text: "Tutorial Added Successfully!",
+                    })
+                }
+            })
     }
 
     return (
@@ -27,8 +51,8 @@ const AddTutorials = () => {
                     </label>
                     <input
                         type="text"
-                        name="userName"
-                        value={user?.name || 'User'}
+                        name="tutorName"
+                        value={user?.displayName || 'User'}
                         readOnly
                         className="input input-bordered w-full bg-gray-100"
                     />
@@ -40,7 +64,7 @@ const AddTutorials = () => {
                     </label>
                     <input
                         type="email"
-                        name="userEmail"
+                        name="tutorEmail"
                         value={user?.email || 'No email available'}
                         readOnly
                         className="input input-bordered w-full bg-gray-100"
