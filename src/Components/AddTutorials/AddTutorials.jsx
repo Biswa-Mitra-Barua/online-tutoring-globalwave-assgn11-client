@@ -45,7 +45,7 @@ const AddTutorials = () => {
         <div className='my-20'>
             <form onSubmit={handleSubmit}
                 className="max-w-lg mx-auto bg-lime-600 shadow-md rounded-lg p-6 space-y-4">
-                <h2 className="text-2xl font-bold text-center">Add Equipment</h2>
+                <h2 className="text-2xl font-bold text-center">Add Tutorial</h2>
 
                 <div className="form-control">
                     <label className="label">
@@ -81,7 +81,6 @@ const AddTutorials = () => {
                         type="text"
                         name="image"
                         placeholder="Enter tutorial image url"
-
                         className="input input-bordered w-full"
                     />
                 </div>
@@ -93,8 +92,7 @@ const AddTutorials = () => {
                     <input
                         type="text"
                         name="language"
-                        placeholder="Enter item name"
-
+                        placeholder="Enter language name"
                         className="input input-bordered w-full"
                     />
                 </div>
@@ -106,8 +104,7 @@ const AddTutorials = () => {
                     <input
                         type="text"
                         name="price"
-                        placeholder="Enter category name"
-
+                        placeholder="Enter price"
                         className="input input-bordered w-full"
                     />
                 </div>
@@ -119,7 +116,6 @@ const AddTutorials = () => {
                     <textarea
                         name="description"
                         placeholder="Enter description"
-
                         className="textarea textarea-bordered w-full"
                     ></textarea>
                 </div>

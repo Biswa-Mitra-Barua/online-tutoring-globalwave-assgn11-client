@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyTutorials = () => {
@@ -23,7 +23,6 @@ const MyTutorials = () => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch tutorials');
                 }
-                console.log(response)
 
                 const data = await response.json();
                 setTutorials(data);
@@ -110,9 +109,9 @@ const MyTutorials = () => {
                                     <td>{tutorial.description}</td>
                                     <td>{tutorial.review}</td>
                                     <td>
-                                        {/* <Link to={`/updateEquipment/${_id}`}> */}
-                                        <button className="btn btn-primary">Update</button>
-                                        {/* </Link> */}
+                                        <Link to={`/updateTutorials/${tutorial._id}`}>
+                                        <button type='submit' className="btn btn-primary">Update</button>
+                                        </Link>
                                     </td>
                                     <td>
                                         <button
