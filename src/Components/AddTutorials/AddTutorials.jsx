@@ -16,7 +16,6 @@ const AddTutorials = () => {
         const description= form.description.value;
         const review = form.review.value;
         const newTutor = {name, email, image, language, price, description, review}
-        console.log(newTutor);
 
         //sending data to the server
         fetch('http://localhost:5000/tutors', {
