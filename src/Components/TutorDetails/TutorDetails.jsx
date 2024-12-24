@@ -1,17 +1,52 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { authContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const TutorDetails = () => {
+    const { user } = useContext(authContext);
     const tutor = useLoaderData();
+
+    const handleBook = () => {
+        const tutorId = tutor._id;
+        const Image = tutor.image;
+        const language = tutor.language;
+        const Price = tutor.price;
+        const tutorEmail = tutor.email;
+        const email = user.email;
+
+        const bookedTutor = { tutorId, tutorEmail, Price, language, Image, email }
+        console.log(bookedTutor)
+
+        //sending data to the server
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookedTutor)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Great...",
+                        text: "Tutor Booked Successfully!",
+                    })
+                }
+            })
+    }
 
     return (
         <div className='my-10'>
-            <div className="py-12 bg-blue-700 bg-opacity-5">
-                <h1 className="text-center shadow-highlight text-4xl sm:text-5xl font-extrabold text-gray-300 drop-shadow-lg">
-                    Explore the Details of {tutor.name}
+            <div className="py-12 bg-blue-800 bg-opacity-5">
+                <h1 className="text-center shadow-highlight text-4xl sm:text-5xl font-extrabold text-gray-500 drop-shadow-lg">
+                    Explore the Details of this Tutorial
                 </h1>
-                <p className="text-center text-lg text-gray-300 mt-3">
-                    Dive deep into the specifics and features of this tutorials.
+                <p className="text-center text-lg text-gray-500 mt-3">
+                    Dive deep into the specifics and features of this tutorial.
                 </p>
             </div>
 
@@ -29,22 +64,23 @@ const TutorDetails = () => {
                         />
                     </div>
 
-                    <div className="relative w-full md:w-1/2 text-left">
-                        <h2 className="text-3xl font-extrabold text-purple-700 mb-4">
-                            {tutor.language}
+                    <div className="relative w-full md:w-1/2 text-left space-y-2">
+                        <h2 className="text-2xl font-extrabold text-purple-700 mb-4">
+                            Tutor: {tutor.name}
                         </h2>
-                        <p className="text-gray-500 text-lg leading-relaxed">
-                            Category: {tutor.price}
-                        </p>
-                        <p className="text-gray-500 text-lg leading-relaxed">
-                            {tutor.description}
-                        </p>
-                        {/* <p className="text-gray-500 text-lg leading-relaxed">
+                        <h2 className="text-xl font-extrabold text-purple-700 mb-4">
+                            Language: {tutor.language}
+                        </h2>
+                        <p className="text-gray-700 text-lg leading-relaxed">
                             Price: ${tutor.price}
-                        </p> */}
-                        <p className="text-gray-500 text-lg leading-relaxed">
-                            *{tutor.review}
                         </p>
+                        <p className="text-gray-700 text-sm leading-relaxed">
+                            Description: {tutor.description}
+                        </p>
+                        <p className="text-gray-700 text-sm leading-relaxed">
+                            Review: {tutor.review}
+                        </p>
+                        <button onClick={handleBook} className='btn btn-info'>Book</button>
                     </div>
                 </div>
             </div>
