@@ -42,14 +42,14 @@ const AddTutorials = () => {
     }
 
     return (
-        <div className='my-20'>
+        <div className="my-10 sm:my-16 lg:my-20">
             <form onSubmit={handleSubmit}
-                className="max-w-lg mx-auto bg-lime-600 shadow-md rounded-lg p-6 space-y-4">
-                <h2 className="text-2xl font-bold text-center">Add Tutorial</h2>
+                className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto bg-lime-500 shadow-md rounded-lg p-4 sm:p-6 lg:p-8 space-y-6">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center text-white">Add Tutorial</h2>
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Name</span>
+                        <span className="label-text text-white">Name</span>
                     </label>
                     <input
                         type="text"
@@ -62,7 +62,7 @@ const AddTutorials = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Email</span>
+                        <span className="label-text text-white">Email</span>
                     </label>
                     <input
                         type="email"
@@ -75,7 +75,7 @@ const AddTutorials = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Image</span>
+                        <span className="label-text text-white">Image</span>
                     </label>
                     <input
                         type="text"
@@ -87,7 +87,7 @@ const AddTutorials = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Language</span>
+                        <span className="label-text text-white">Language</span>
                     </label>
                     <input
                         type="text"
@@ -99,7 +99,7 @@ const AddTutorials = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Price</span>
+                        <span className="label-text text-white">Price</span>
                     </label>
                     <input
                         type="text"
@@ -111,7 +111,7 @@ const AddTutorials = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Description</span>
+                        <span className="label-text text-white">Description</span>
                     </label>
                     <textarea
                         name="description"
@@ -122,7 +122,7 @@ const AddTutorials = () => {
 
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Review</span>
+                        <span className="label-text text-white">Review</span>
                     </label>
                     <input
                         type="number"

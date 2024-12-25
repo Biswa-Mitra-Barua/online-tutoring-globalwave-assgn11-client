@@ -21,13 +21,13 @@ const Banner = () => {
             className=' shadow-xl rounded-lg'
         >
             <SwiperSlide>
-                <img src="/Images/Banner-01.jpg" alt="" style={{ width: "100%", height: "80vh" }} />
+                <img src="/Images/Banner-01.jpg" alt="" className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover" />
             </SwiperSlide>
             <SwiperSlide>
-                <img src="/Images/Banner-02.jpg" alt="" style={{ width: "100%", height: "80vh" }} />
+                <img src="/Images/Banner-02.jpg" alt="" className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover" />
             </SwiperSlide>
             <SwiperSlide>
-                <img src="/Images/Banner-03.jpg" alt="" style={{ width: "100%", height: "80vh" }} />
+                <img src="/Images/Banner-03.jpg" alt="" className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover" />
             </SwiperSlide>
         </Swiper>
     );

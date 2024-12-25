@@ -3,10 +3,10 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className="bg-gray-800 text-white py-10">
-            <footer className="container mx-auto px-6">
+            <footer className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
                     <div>
-                        <h3 className="text-xl font-semibold mb-4 neon">GlobalWave</h3>
+                        <h3 className="text-xl font-semibold mb-4">GlobalWave</h3>
                         <ul>
                             <li>
                                 <a href="#" className="hover:text-teal-400 transition-all duration-300">About Us</a>
