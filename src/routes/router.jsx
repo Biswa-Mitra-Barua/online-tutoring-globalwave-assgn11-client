@@ -13,6 +13,9 @@ import MyBookedTutors from '../Components/MyBookedTutors/MyBookedTutors';
 import UpdateTutorials from '../Components/UpdateTutorials/UpdateTutorials';
 import PrivateRoute from '../Components/PrivateRoute/PrivateRoute';
 import TutorDetails from '../Components/TutorDetails/TutorDetails';
+import ForgotPassword from '../Components/ForgotPassword/ForgotPassword';
+import Error from '../Components/Error/Error';
+
 
 const router = createBrowserRouter([
     {
@@ -67,6 +70,14 @@ const router = createBrowserRouter([
             {
                 path: 'login',
                 element: <Login></Login>
+            },
+            {
+                path: '/forgotPassword',
+                element: <ForgotPassword></ForgotPassword>
+            },
+            {
+                path: '*',
+                element: <Error></Error>
             },
         ]
     },
