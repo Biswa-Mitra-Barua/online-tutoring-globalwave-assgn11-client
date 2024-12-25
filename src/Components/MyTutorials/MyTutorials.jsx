@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyTutorials = () => {

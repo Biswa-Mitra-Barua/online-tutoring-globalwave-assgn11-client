@@ -2,12 +2,19 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { authContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { toast, ToastContainer } from 'react-toastify';
 
 const TutorDetails = () => {
     const { user } = useContext(authContext);
     const tutor = useLoaderData();
 
     const handleBook = () => {
+        if(user?.email === tutor?.email){
+            toast.error('Action not permitted!');
+            return
+        } 
+
+        const name = tutor.name;
         const tutorId = tutor._id;
         const Image = tutor.image;
         const language = tutor.language;
@@ -15,8 +22,9 @@ const TutorDetails = () => {
         const tutorEmail = tutor.email;
         const email = user.email;
 
-        const bookedTutor = { tutorId, tutorEmail, Price, language, Image, email }
-        console.log(bookedTutor)
+        
+            
+        const bookedTutor = { name, tutorId, tutorEmail, Price, language, Image, email }
 
         //sending data to the server
         fetch('http://localhost:5000/users', {
@@ -81,6 +89,7 @@ const TutorDetails = () => {
                             Review: {tutor.review}
                         </p>
                         <button onClick={handleBook} className='btn btn-info'>Book</button>
+                        <ToastContainer></ToastContainer>
                     </div>
                 </div>
             </div>
