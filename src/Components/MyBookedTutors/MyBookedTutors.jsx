@@ -9,7 +9,7 @@ const MyBookedTutors = () => {
     const [tutorials, setTutorials] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    
+
 
     useEffect(() => {
         const userBookedTutorials = async () => {
@@ -45,36 +45,42 @@ const MyBookedTutors = () => {
         return <div className="text-center text-red-500">{error.message}</div>;
     }
 
-    const handleReview = async (tutorId) => {
-        try {
-            const response = await fetch(`http://localhost:5000/tutors/${tutorId}`, {
-                method: 'PATCH',
-                headers: {
-                    'content-Type': 'application/json',
-                },
-            });
+    // const handleReview = async (tutorId) => {
+    //     try {
+    //         const response = await fetch(`http://localhost:5000/users/${tutorId}`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({ email: user.email }),
+    //         });
 
-            if (!response.ok) {
-                throw new Error('Failed to update review');
-            }
+    //         if (!response.ok) {
+    //             throw new Error('Failed to update review');
+    //         }
 
-            setTutorials(prevTutorials =>
-                prevTutorials.map(tutorial =>
-                    tutorial._id === tutorId ? { ...tutorial, review: (tutorial.review || 0) + 1 } : tutorial
-                )
-            );
+    //         const updatedTutorial = await response.json();
 
-            toast('Review updated successfully!');
-        } catch (error) {
-            console.error('Error updating review:', error);
-            toast('Failed to update review');
-        }
-    };
+    //         setTutorials((prevTutorials) =>
+    //             prevTutorials.map((tutorial) =>
+    //                 tutorial._id === tutorId
+    //                     ? { ...tutorial, review: (tutorial.review || 0) + 1 }
+    //                     : tutorial
+    //             )
+    //         );
+
+    //         toast.success('Review updated successfully!');
+    //     } catch (error) {
+    //         console.error('Error updating review:', error);
+    //         toast.error('Failed to update review');
+    //     }
+    // };
+
 
 
     return (
         <div className='w-11/12 mx-auto'>
-            
+
             <div className="overflow-x-auto">
                 <table className="table">
 
@@ -99,10 +105,10 @@ const MyBookedTutors = () => {
                                     <td><img className='w-12 h-12 rounded-full' src={tutorial.Image} alt="" /></td>
                                     <td>{tutorial.language}</td>
                                     <td>${tutorial.Price}</td>
-                                    
+
                                     <td>
-                                        <button
-                                            onClick={() => handleReview(tutorial._id)}
+                                        <button type='submit'
+                                            // onClick={() => handleReview(tutorial._id)}
                                             className="btn btn-primary">Review</button>
                                     </td>
                                 </tr>)

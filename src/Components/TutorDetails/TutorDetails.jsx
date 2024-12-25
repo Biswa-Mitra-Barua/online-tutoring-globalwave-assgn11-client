@@ -20,11 +20,10 @@ const TutorDetails = () => {
         const language = tutor.language;
         const Price = tutor.price;
         const tutorEmail = tutor.email;
+        const review = tutor.review;
         const email = user.email;
-
-        
             
-        const bookedTutor = { name, tutorId, tutorEmail, Price, language, Image, email }
+        const bookedTutor = { name, tutorId, tutorEmail, Price, language, Image, email, review }
 
         //sending data to the server
         fetch('http://localhost:5000/users', {
@@ -36,7 +35,6 @@ const TutorDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.insertedId) {
                     Swal.fire({
                         icon: "success",
@@ -46,6 +44,8 @@ const TutorDetails = () => {
                 }
             })
     }
+
+    
 
     return (
         <div className='my-10'>
