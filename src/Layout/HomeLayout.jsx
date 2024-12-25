@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../Components/Banner/Banner';
 import Stats from '../Components/Stats/Stats';
 import LanguageCategory from '../Components/LanguageCategory/LanguageCategory';
+import WhyChooseUs from '../Components/WhyChooseUs/WhyChooseUs';
 
 const HomeLayout = () => {
     return (
@@ -18,6 +19,10 @@ const HomeLayout = () => {
             {/* Language Category */}
             <section>
                 <LanguageCategory></LanguageCategory>
+            </section>
+
+            <section>
+                <WhyChooseUs></WhyChooseUs>
             </section>
 
         </div>
