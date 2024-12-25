@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-br from-gray-600 to-gray-200 py-10">
+        <section className="bg-gradient-to-br from-gray-500 to-gray-200 py-14 rounded-md">
             <div className="container mx-auto px-6">
                 <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
                     Why Choose Us?

@@ -3,6 +3,7 @@ import Banner from '../Components/Banner/Banner';
 import Stats from '../Components/Stats/Stats';
 import LanguageCategory from '../Components/LanguageCategory/LanguageCategory';
 import WhyChooseUs from '../Components/WhyChooseUs/WhyChooseUs';
+import StudentTestimonials from '../Components/StudentTestimonials/StudentTestimonials';
 
 const HomeLayout = () => {
     return (
@@ -23,6 +24,10 @@ const HomeLayout = () => {
 
             <section>
                 <WhyChooseUs></WhyChooseUs>
+            </section>
+
+            <section>
+                <StudentTestimonials></StudentTestimonials>
             </section>
 
         </div>
