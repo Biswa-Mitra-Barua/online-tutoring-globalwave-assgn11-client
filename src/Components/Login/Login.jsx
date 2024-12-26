@@ -4,6 +4,7 @@ import { FaGoogle } from 'react-icons/fa6';
 import { AiOutlineLogin } from 'react-icons/ai';
 import Swal from 'sweetalert2';
 import { authContext } from '../AuthProvider/AuthProvider';
+import axios from 'axios';
 
 const Login = () => {
     const { user, handleGoogleLogin, handleLogin, setUser } = useContext(authContext);
@@ -25,7 +26,12 @@ const Login = () => {
 
         handleLogin(email, password)
             .then(res => {
+                const user = res.user.email;
                 setUser(res.user)
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                    })
                 navigate(location.state?.from || '/')
             })
             .catch((error) => {
@@ -39,10 +45,15 @@ const Login = () => {
     const googleHandler = () => {
         handleGoogleLogin()
             .then(res => {
+                const user = res.user.email;
                 setUser(res.user);
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                    })
                 navigate(location.state?.from || '/')
             })
-            .cath(error => {
+            .catch(error => {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",

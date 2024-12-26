@@ -17,7 +17,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className='p-6 bg-gray-700'>
+        <div className='p-8 bg-gray-700'>
             <div className='flex justify-between items-center'>
                 <div className='flex items-center gap-4'>
                     <button

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 const MyTutorials = () => {
     const { user } = useContext(authContext);
@@ -19,13 +20,16 @@ const MyTutorials = () => {
             }
 
             try {
-                const response = await fetch(`http://localhost:5000/tutors?email=${user.email}`);
-                if (!response.ok) {
+                try {
+                    const response = await axios.get('http://localhost:5000/tutors', {
+                        params: { email: user.email },
+                        withCredentials: true,
+                    });
+                    setTutorials(response.data);
+                } catch (error) {
+                    console.error('Failed to fetch tutorials:', error);
                     throw new Error('Failed to fetch tutorials');
                 }
-
-                const data = await response.json();
-                setTutorials(data);
             } catch (error) {
                 setError(error.message);
             } finally {
@@ -110,7 +114,7 @@ const MyTutorials = () => {
                                     <td>{tutorial.review}</td>
                                     <td>
                                         <Link to={`/updateTutorials/${tutorial._id}`}>
-                                        <button type='submit' className="btn btn-primary">Update</button>
+                                            <button type='submit' className="btn btn-primary">Update</button>
                                         </Link>
                                     </td>
                                     <td>

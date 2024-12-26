@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 const MyBookedTutors = () => {
-
     const { user } = useContext(authContext);
 
     const [tutorials, setTutorials] = useState([]);
@@ -20,13 +20,16 @@ const MyBookedTutors = () => {
             }
 
             try {
-                const response = await fetch(`http://localhost:5000/users?email=${user.email}`);
-                if (!response.ok) {
+                try {
+                    const response = await axios.get('http://localhost:5000/users', {
+                        params: { email: user.email },
+                        withCredentials: true,
+                    });
+                    setTutorials(response.data);
+                } catch (error) {
+                    console.error('Failed to fetch booked tutorials:', error);
                     throw new Error('Failed to fetch booked tutorials');
                 }
-
-                const data = await response.json();
-                setTutorials(data);
             } catch (error) {
                 setError(error.message);
             } finally {
@@ -45,36 +48,11 @@ const MyBookedTutors = () => {
         return <div className="text-center text-red-500">{error.message}</div>;
     }
 
-    // const handleReview = async (tutorId) => {
-    //     try {
-    //         const response = await fetch(`http://localhost:5000/users/${tutorId}`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({ email: user.email }),
-    //         });
-
-    //         if (!response.ok) {
-    //             throw new Error('Failed to update review');
-    //         }
-
-    //         const updatedTutorial = await response.json();
-
-    //         setTutorials((prevTutorials) =>
-    //             prevTutorials.map((tutorial) =>
-    //                 tutorial._id === tutorId
-    //                     ? { ...tutorial, review: (tutorial.review || 0) + 1 }
-    //                     : tutorial
-    //             )
-    //         );
-
-    //         toast.success('Review updated successfully!');
-    //     } catch (error) {
-    //         console.error('Error updating review:', error);
-    //         toast.error('Failed to update review');
-    //     }
-    // };
+    const handleReview = (id) => {
+        console.log(id)
+    }
+        
+            
 
 
 
@@ -108,7 +86,7 @@ const MyBookedTutors = () => {
 
                                     <td>
                                         <button type='submit'
-                                            // onClick={() => handleReview(tutorial._id)}
+                                            onClick={() => handleReview(tutorial._id)}
                                             className="btn btn-primary">Review</button>
                                     </td>
                                 </tr>)

@@ -62,6 +62,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <MyBookedTutors></MyBookedTutors>,
                 </PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
             },
             {
                 path: 'register',
