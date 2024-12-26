@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { authContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { toast, ToastContainer } from 'react-toastify';
@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 const TutorDetails = () => {
     const { user } = useContext(authContext);
     const tutor = useLoaderData();
+    const navigate = useNavigate();
 
     const handleBook = () => {
         if(user?.email === tutor?.email){
@@ -41,6 +42,7 @@ const TutorDetails = () => {
                         title: "Great...",
                         text: "Tutor Booked Successfully!",
                     })
+                    navigate('/myBookedTutors')
                 }
             })
     }
