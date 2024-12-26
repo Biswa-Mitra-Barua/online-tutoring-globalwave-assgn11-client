@@ -29,14 +29,14 @@ const router = createBrowserRouter([
             {
                 path: 'find-tutors',
                 element: <FindTutors></FindTutors>,
-                loader: () => fetch('http://localhost:5000/tutors')
+                loader: () => fetch('https://global-wave-server.vercel.app/tutors')
             },
             {
                 path: 'tutor/:details',
                 element: <PrivateRoute>
                     <TutorDetails></TutorDetails>,
                 </PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/tutors/${params.details}`)
+                loader: ({params}) => fetch(`https://global-wave-server.vercel.app/tutors/${params.details}`)
             },
             {
                 path: 'addTutorials',
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <UpdateTutorials></UpdateTutorials>,
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/tutors/${params.id}`)
+                loader: ({ params }) => fetch(`https://global-wave-server.vercel.app/tutors/${params.id}`)
             },
             {
                 path: 'myTutorials',
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <MyBookedTutors></MyBookedTutors>,
                 </PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/users/${params.id}`)
+                loader: ({params}) => fetch(`https://global-wave-server.vercel.app/users/${params.id}`)
             },
             {
                 path: 'register',

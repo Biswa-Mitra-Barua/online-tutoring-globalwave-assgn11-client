@@ -8,7 +8,7 @@ const FindTutors = () => {
     const [search, setSearch] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:5000/all-tutors?search=${search}`)
+        fetch(`https://global-wave-server.vercel.app/all-tutors?search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setUpdateTutors(data)
