@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <TutorDetails></TutorDetails>,
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/tutors/${params.details}`)
+                loader: ({ params }) => fetch(`https://global-wave-server.vercel.app/tutors/${params.details}`)
             },
             {
                 path: 'addTutorials',
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <UpdateTutorials></UpdateTutorials>,
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/tutors/${params.id}`)
+                loader: ({ params }) => fetch(`https://global-wave-server.vercel.app/tutors/${params.id}`)
             },
             {
                 path: 'myTutorials',

@@ -20,7 +20,7 @@ const MyBookedTutors = () => {
 
             try {
                 try {
-                    const response = await axios.get('http://localhost:5000/users', {
+                    const response = await axios.get('https://global-wave-server.vercel.app/users', {
                         params: { email: user.email },
                         withCredentials: true,
                     });

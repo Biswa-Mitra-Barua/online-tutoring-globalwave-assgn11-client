@@ -9,10 +9,10 @@ const FindTutors = () => {
 
     useEffect(() => {
         const url = search
-            ? `http://localhost:5000/all-tutors?search=${search}`
+            ? `https://global-wave-server.vercel.app/all-tutors?search=${search}`
             : category
-                ? `http://localhost:5000/all-tutors?category=${category}`
-                : 'http://localhost:5000/all-tutors';
+                ? `https://global-wave-server.vercel.app/all-tutors?category=${category}`
+                : 'https://global-wave-server.vercel.app/all-tutors';
 
 
         fetch(url)

@@ -8,22 +8,22 @@ const Stats = () => {
 
     useEffect(() => {
         // Fetch Tutor Count
-        fetch('http://localhost:5000/stats/tutors-count')
+        fetch('https://global-wave-server.vercel.app/stats/tutors-count')
             .then(res => res.json())
             .then(data => setTutorsCount(data.count));
 
         // Fetch Review Count
-        fetch('http://localhost:5000/stats/review-count')
+        fetch('https://global-wave-server.vercel.app/stats/review-count')
             .then(res => res.json())
             .then(data => setReviewCount(data.count));
 
         // Fetch Language Count
-        fetch('http://localhost:5000/stats/languages-count')
+        fetch('https://global-wave-server.vercel.app/stats/languages-count')
             .then(res => res.json())
             .then(data => setLanguagesCount(data.count));
 
         // Fetch Users Count
-        fetch('http://localhost:5000/stats/users-count')
+        fetch('https://global-wave-server.vercel.app/stats/users-count')
             .then(res => res.json())
             .then(data => setUsersCount(data.count));
     }, []);
