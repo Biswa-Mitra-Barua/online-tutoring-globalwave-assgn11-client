@@ -21,7 +21,7 @@ const MyTutorials = () => {
 
             try {
                 try {
-                    const response = await axios.get('https://global-wave-server.vercel.app/tutors', {
+                    const response = await axios.get('http://localhost:5000/tutors', {
                         params: { email: user.email },
                         withCredentials: true,
                     });
@@ -61,7 +61,7 @@ const MyTutorials = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://global-wave-server.vercel.app/tutors/${_id}`, {
+                fetch(`http://localhost:5000/tutors/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

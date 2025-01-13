@@ -1,19 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import TutorCard from '../TutorCard/TutorCard';
+import { useParams } from 'react-router-dom';
 
 const FindTutors = () => {
-    const tutors = useLoaderData();
-    const [updateTutors, setUpdateTutors] = useState([]);
-    const [search, setSearch] = useState('')
+    const [tutors, setTutors] = useState([]);
+    const [search, setSearch] = useState('');
+    const { category } = useParams();
 
     useEffect(() => {
-        fetch(`https://global-wave-server.vercel.app/all-tutors?search=${search}`)
+        const url = search
+            ? `http://localhost:5000/all-tutors?search=${search}`
+            : category
+                ? `http://localhost:5000/all-tutors?category=${category}`
+                : 'http://localhost:5000/all-tutors';
+
+
+        fetch(url)
             .then(res => res.json())
-            .then(data => {
-                setUpdateTutors(data)
-            })
-    }, [search])
+            .then(data => setTutors(data))
+            .catch(error => console.error('Fetch error:', error));
+    }, [category, search]);
+
 
     return (
         <div className='my-10 w-11/12 mx-auto'>
@@ -26,7 +33,7 @@ const FindTutors = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
-                    updateTutors.map(tutor => <TutorCard key={tutor._id} tutor={tutor}></TutorCard>)
+                    tutors.map(tutor => <TutorCard key={tutor._id} tutor={tutor}></TutorCard>)
                 }
             </div>
         </div>

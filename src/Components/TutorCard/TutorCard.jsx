@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TutorCard = ({ tutor }) => {
-    const { name, image, language, review, _id } = tutor;
+    const { name, image, language, review } = tutor;
 
     return (
         <div>

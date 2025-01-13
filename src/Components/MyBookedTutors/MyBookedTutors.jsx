@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const MyBookedTutors = () => {
     const { user } = useContext(authContext);
-
     const [tutorials, setTutorials] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -21,7 +20,7 @@ const MyBookedTutors = () => {
 
             try {
                 try {
-                    const response = await axios.get('https://global-wave-server.vercel.app/users', {
+                    const response = await axios.get('http://localhost:5000/users', {
                         params: { email: user.email },
                         withCredentials: true,
                     });
@@ -51,9 +50,6 @@ const MyBookedTutors = () => {
     const handleReview = (id) => {
         console.log(id)
     }
-        
-            
-
 
 
     return (

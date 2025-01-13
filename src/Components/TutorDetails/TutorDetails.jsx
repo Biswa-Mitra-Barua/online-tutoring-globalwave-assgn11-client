@@ -27,7 +27,7 @@ const TutorDetails = () => {
         const bookedTutor = { name, tutorId, tutorEmail, Price, language, Image, email, review }
 
         //sending data to the server
-        fetch('https://global-wave-server.vercel.app/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
