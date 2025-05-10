@@ -18,27 +18,27 @@ const LanguageCategory = () => {
     ];
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 mb-10 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-20 mb-20 px-4 sm:px-6 lg:px-6">
             {categories.map((category, index) => (
                 <div
                     key={index}
                     onClick={() => navigate(`/find-tutors/${category.name}`)}
-                    className="card flex flex-col sm:flex-row items-center bg-base-100 shadow-xl p-4 sm:p-6 cursor-pointer hover:shadow-2xl transition-shadow"
+                    className="card flex flex-col sm:flex-row items-center bg-base-100 shadow-xl p-6 sm:p-6 border-black border-l-2 cursor-pointer hover:shadow-2xl transition-shadow"
                 >
                     <figure className="mb-4 sm:mb-0 sm:mr-4">
                         <img
-                            className="w-20 h-20 rounded-full"
+                            className="w-14 h-14 rounded-full border-b-4 border-black"
                             src={category.image}
                             alt={category.name}
                         />
                     </figure>
                     <div className="flex-1">
-                        <h2 className="card-title text-center sm:text-left">
+                        <h2 className="card-title text-center text-lg sm:text-left">
                             {category.name} Tutors
                         </h2>
-                        <p className="text-center sm:text-left">{category.count} teachers</p>
+                        <p className="text-center text-sm sm:text-left">{category.count} teachers</p>
                     </div>
-                    <div className="text-3xl text-teal-500 mt-4 sm:mt-0">
+                    <div className="text-xl mt-4 sm:mt-0">
                         <SlArrowRight />
                     </div>
                 </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import { FaChalkboardTeacher, FaClock, FaGlobe, FaCertificate } from "react-icons/fa";
 
 const WhyChooseUs = () => {
@@ -26,7 +25,7 @@ const WhyChooseUs = () => {
     ];
 
     return (
-        <section className="bg-gradient-to-br from-gray-500 to-gray-200 py-14 rounded-md">
+        <section className="bg-gradient-to-br from-gray-500 to-gray-200 py-16 rounded-md">
             <div className="container mx-auto px-4 sm:px-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6">
                     Why Choose Us?
