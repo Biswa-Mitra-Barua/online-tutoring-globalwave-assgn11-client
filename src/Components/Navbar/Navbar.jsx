@@ -40,46 +40,46 @@ const NavBar = () => {
                         </svg>
                     </button>
                     {/* Logo */}
-                    <Link to='/' className='text-2xl lg:text-4xl font-bold'>
+                    <Link to='/' className='text-2xl lg:text-4xl font-bold text-slate-300'>
                         <span className="font-extrabold">Global</span>Wave
                     </Link>
                 </div>
 
                 <div
-                    className={`absolute md:static top-16 left-0 w-full md:w-auto md:flex space-y-4 md:space-y-0 flex-col md:flex-row items-center md:space-x-4 p-4 md:p-0 transition-transform duration-300 ${menuOpen ? 'block' : 'hidden'}`}
+                    className={`absolute md:static top-28 space-x-4 left-0 w-full md:w-auto md:flex space-y-4 md:space-y-0 flex-col md:flex-row items-center md:space-x-4 px-4 py-3 md:p-0 transition-transform duration-300 ${menuOpen ? 'block' : 'hidden'}`}
                 >
                     <NavLink
                         to='/'
                         activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 hover:text-sky-500 transition-colors"
+                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
                     >
                         Home
                     </NavLink>
                     <NavLink
                         to='/find-tutors'
                         activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 hover:text-sky-500 transition-colors"
+                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
                     >
                         Find Tutors
                     </NavLink>
                     <NavLink
                         to='/addTutorials'
                         activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 hover:text-sky-500 transition-colors"
+                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
                     >
                         Add Tutorials
                     </NavLink>
                     <NavLink
                         to='/myTutorials'
                         activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 hover:text-sky-500 transition-colors"
+                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
                     >
                         My Tutorials
                     </NavLink>
                     <NavLink
                         to='/myBookedTutors'
                         activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 hover:text-sky-500 transition-colors"
+                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
                     >
                         My Booked Tutors
                     </NavLink>

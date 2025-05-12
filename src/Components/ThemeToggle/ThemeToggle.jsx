@@ -14,7 +14,7 @@ const ThemeToggle = () => {
 
     return (
         <div className='flex justify-end mx-20'>
-            <button onClick={toggleTheme} className='btn btn-outline btn-xs'>
+            <button onClick={toggleTheme} className='btn btn-outline btn-xs text-slate-300'>
                 {
                     theme === 'light' ? 'Switch to Dark': 'Switch to Light'
                 }
