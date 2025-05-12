@@ -1,4 +1,3 @@
-import React from 'react';
 import { SlArrowRight } from 'react-icons/sl';
 import { useNavigate } from 'react-router-dom';
 
@@ -23,7 +22,7 @@ const LanguageCategory = () => {
                 <div
                     key={index}
                     onClick={() => navigate(`/find-tutors/${category.name}`)}
-                    className="card flex flex-col sm:flex-row items-center bg-base-100 shadow-xl p-6 sm:p-6 border-black border-l-2 cursor-pointer hover:shadow-2xl transition-shadow"
+                    className="card group flex flex-col sm:flex-row items-center bg-base-100 shadow-md p-6 sm:p-6 border-black border-l-2 cursor-pointer hover:shadow-2xl hover:scale-[1.04] transition-all duration-300"
                 >
                     <figure className="mb-4 sm:mb-0 sm:mr-4">
                         <img
