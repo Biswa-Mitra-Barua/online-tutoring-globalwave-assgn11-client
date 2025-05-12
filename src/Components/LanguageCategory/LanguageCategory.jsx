@@ -17,7 +17,7 @@ const LanguageCategory = () => {
     ];
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-20 mb-20 px-4 sm:px-6 lg:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-20 mb-20 px-4 sm:px-6 lg:px-0">
             {categories.map((category, index) => (
                 <div
                     key={index}

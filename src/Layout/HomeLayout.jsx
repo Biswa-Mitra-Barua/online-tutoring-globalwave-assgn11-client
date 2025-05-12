@@ -1,4 +1,3 @@
-import React from 'react';
 import Banner from '../Components/Banner/Banner';
 import Stats from '../Components/Stats/Stats';
 import LanguageCategory from '../Components/LanguageCategory/LanguageCategory';
@@ -28,6 +27,9 @@ const HomeLayout = () => {
 
             <section>
                 <StudentTestimonials></StudentTestimonials>
+            </section>
+            <section>
+                
             </section>
 
         </div>
