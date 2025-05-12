@@ -44,7 +44,7 @@ const AddTutorials = () => {
     return (
         <div className="my-10 sm:my-16 lg:my-20">
             <form onSubmit={handleSubmit}
-                className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto bg-lime-500 shadow-md rounded-lg p-4 sm:p-6 lg:p-8 space-y-6">
+                className="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto bg-gradient-to-br from-gray-500 to-gray-300 shadow-md rounded-lg p-4 sm:p-6 lg:p-8 space-y-6">
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center text-white">Add Tutorial</h2>
 
                 <div className="form-control">

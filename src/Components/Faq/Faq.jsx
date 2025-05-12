@@ -3,7 +3,7 @@ import React from 'react';
 const Faq = () => {
     return (
         <div className="my-16 pb-6 pt-2 px-4 lg:px-0 mx-auto">
-            <h2 className="text-3xl text-slate-300 font-bold text-center mb-8">Frequently Asked Questions</h2>
+            <h2 className="text-3xl text-slate-500 font-bold text-center mb-8">Frequently Asked Questions</h2>
 
             <div className="space-y-4">
                 <div className="collapse collapse-arrow bg-base-200">
