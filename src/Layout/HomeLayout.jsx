@@ -3,6 +3,8 @@ import Stats from '../Components/Stats/Stats';
 import LanguageCategory from '../Components/LanguageCategory/LanguageCategory';
 import WhyChooseUs from '../Components/WhyChooseUs/WhyChooseUs';
 import StudentTestimonials from '../Components/StudentTestimonials/StudentTestimonials';
+import Faq from '../Components/Faq/Faq';
+import Subscription from '../Components/Subscription/Subscription';
 
 const HomeLayout = () => {
     return (
@@ -11,12 +13,10 @@ const HomeLayout = () => {
                 <Banner></Banner>
             </section>
 
-            {/* Stats */}
             <section>
                 <Stats></Stats>
             </section>
 
-            {/* Language Category */}
             <section>
                 <LanguageCategory></LanguageCategory>
             </section>
@@ -29,7 +29,10 @@ const HomeLayout = () => {
                 <StudentTestimonials></StudentTestimonials>
             </section>
             <section>
-                
+                <Faq></Faq>
+            </section>
+            <section>
+                <Subscription></Subscription>
             </section>
 
         </div>
