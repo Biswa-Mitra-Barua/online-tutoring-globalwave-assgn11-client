@@ -83,7 +83,7 @@ const MyBookedTutors = () => {
                                     <td>
                                         <button type='submit'
                                             onClick={() => handleReview(tutorial._id)}
-                                            className="btn btn-primary">Review</button>
+                                            className="btn btn-outline">Review</button>
                                     </td>
                                 </tr>)
                         }

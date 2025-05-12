@@ -40,7 +40,7 @@ const NavBar = () => {
                         </svg>
                     </button>
                     {/* Logo */}
-                    <Link to='/' className='text-2xl lg:text-4xl font-bold text-slate-300'>
+                    <Link to='/' className='text-2xl lg:text-4xl font-semibold text-slate-300'>
                         <span className="font-extrabold">Global</span>Wave
                     </Link>
                 </div>

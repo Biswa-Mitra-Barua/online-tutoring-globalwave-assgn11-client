@@ -37,7 +37,7 @@ const StudentTestimonials = () => {
                 <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
                     "What Our Students Say"
                 </h2>
-                <p className="text-center text-gray-700 mb-10">
+                <p className="text-center text-gray-800 mb-10">
                     Hear from our students about their experiences and achievements.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

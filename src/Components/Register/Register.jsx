@@ -102,10 +102,10 @@ const Register = () => {
                         <input name="confirmPassword" type="password" placeholder="Confirm Password" className="input input-bordered" required />
                     </div>
                     <div className="form-control mt-3">
-                        <button type='submit' className="btn btn-primary"><MdAppRegistration /> Register</button>
+                        <button type='submit' className="btn btn-outline"><MdAppRegistration /> Register</button>
                     </div>
                     <p className='flex justify-center'>Or,</p>
-                    <button type='button' className='btn btn-neutral mb-2'><FaGoogle></FaGoogle> Register with Google</button>
+                    <button type='button' className='btn btn-outline mb-2'><FaGoogle></FaGoogle> Register with Google</button>
                     <p>Already have an account, please <Link to='/login' className='text-blue-400 font-semibold'>Login</Link> here</p>
                 </form>
                 {

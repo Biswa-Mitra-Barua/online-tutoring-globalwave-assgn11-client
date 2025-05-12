@@ -114,13 +114,13 @@ const MyTutorials = () => {
                                     <td>{tutorial.review}</td>
                                     <td>
                                         <Link to={`/updateTutorials/${tutorial._id}`}>
-                                            <button type='submit' className="btn btn-primary">Update</button>
+                                            <button type='submit' className="btn btn-outline">Update</button>
                                         </Link>
                                     </td>
                                     <td>
                                         <button
                                             onClick={() => handleDelete(tutorial._id)}
-                                            className="btn btn-primary">Delete</button>
+                                            className="btn btn-outline">Delete</button>
                                     </td>
                                 </tr>)
                         }

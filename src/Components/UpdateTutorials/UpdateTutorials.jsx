@@ -140,7 +140,7 @@ const UpdateTutorials = () => {
                 </div>
 
                 <div className="form-control mt-4">
-                    <button type="submit" className="btn btn-block border-black border-1">
+                    <button type="submit" className="btn btn-outline border-black border-1">
                         Update
                     </button>
                 </div>

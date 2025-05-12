@@ -92,10 +92,10 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-3">
-                        <button type='submit' className="btn btn-primary"><AiOutlineLogin /> Login</button>
+                        <button type='submit' className="btn btn-outline"><AiOutlineLogin /> Login</button>
                     </div>
                     <p className='flex justify-center'>Or,</p>
-                    <button type='button' onClick={googleHandler} className='btn btn-neutral mb-2'><FaGoogle></FaGoogle> Login with Google</button>
+                    <button type='button' onClick={googleHandler} className='btn btn-outline mb-2'><FaGoogle></FaGoogle> Login with Google</button>
                     <p>Don't have an account, please <Link to='/register' className='text-blue-400 font-semibold'>Register</Link> here</p>
                 </form>
             </div>

@@ -18,7 +18,7 @@ const Banner = () => {
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
             loop={true}
-            className=' shadow-xl rounded-lg'
+            className=' shadow-xl rounded-lg my-20'
         >
             <SwiperSlide>
                 <img src="/Images/Banner-01.jpg" alt="" className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover" />

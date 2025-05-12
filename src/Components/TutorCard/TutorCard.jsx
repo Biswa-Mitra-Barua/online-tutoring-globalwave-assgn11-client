@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TutorCard = ({ tutor }) => {
@@ -18,7 +17,7 @@ const TutorCard = ({ tutor }) => {
                     <p className='my-1 text-xl'>Language: {language}</p>
                     <p>{review}</p>
                     <div className="card-actions mt-3">
-                        <Link to={`/tutor/${tutor._id}`} className="btn btn-primary">
+                        <Link to={`/tutor/${tutor._id}`} className="btn btn-outline">
                             View Details
                         </Link>
                     </div>
