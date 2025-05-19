@@ -17,12 +17,13 @@ const NavBar = () => {
     };
 
     return (
-        <div className='p-8 bg-gray-700'>
+        <div className='p-4 bg-gray-700 relative z-50'>
             <div className='flex justify-between items-center'>
+              
                 <div className='flex items-center gap-4'>
                     <button
                         onClick={toggleMenu}
-                        className='block md:hidden text-gray-600 focus:outline-none'
+                        className='md:hidden text-white focus:outline-none'
                     >
                         <svg
                             className="w-6 h-6"
@@ -30,7 +31,6 @@ const NavBar = () => {
                             stroke="currentColor"
                             strokeWidth={2}
                             viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
                         >
                             <path
                                 strokeLinecap="round"
@@ -39,92 +39,90 @@ const NavBar = () => {
                             />
                         </svg>
                     </button>
-                    {/* Logo */}
-                    <Link to='/' className='text-2xl lg:text-4xl font-semibold text-slate-300'>
-                        <span className="font-extrabold">Global</span>Wave
+                    <Link to='/' className='text-2xl md:text-4xl md:mr-20 font-bold text-slate-300'>
+                        <span className="text-white">Global</span>Wave
                     </Link>
                 </div>
 
                 <div
-                    className={`absolute md:static top-28 space-x-4 left-0 w-full md:w-auto md:flex space-y-4 md:space-y-0 flex-col md:flex-row items-center md:space-x-4 px-4 py-3 md:p-0 transition-transform duration-300 ${menuOpen ? 'block' : 'hidden'}`}
+                    className={`${
+                        menuOpen ? 'flex' : 'hidden'
+                    } absolute top-full left-0 w-full bg-gray-800 md:bg-transparent md:static md:flex md:flex-row flex-col md:items-center gap-4 px-4 py-4 md:py-0`}
                 >
                     <NavLink
                         to='/'
-                        activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
+                        className={({ isActive }) =>
+                            `text-gray-300 text-sm md:text-base hover:text-sky-400 ${isActive ? 'text-sky-400 font-semibold' : ''}`
+                        }
                     >
                         Home
                     </NavLink>
                     <NavLink
                         to='/find-tutors'
-                        activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
+                        className={({ isActive }) =>
+                            `text-gray-300 text-sm md:text-base hover:text-sky-400 ${isActive ? 'text-sky-400 font-semibold' : ''}`
+                        }
                     >
                         Find Tutors
                     </NavLink>
                     <NavLink
                         to='/addTutorials'
-                        activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
+                        className={({ isActive }) =>
+                            `text-gray-300 text-sm md:text-base hover:text-sky-400 ${isActive ? 'text-sky-400 font-semibold' : ''}`
+                        }
                     >
                         Add Tutorials
                     </NavLink>
                     <NavLink
                         to='/myTutorials'
-                        activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
+                        className={({ isActive }) =>
+                            `text-gray-300 text-sm md:text-base hover:text-sky-400 ${isActive ? 'text-sky-400 font-semibold' : ''}`
+                        }
                     >
                         My Tutorials
                     </NavLink>
                     <NavLink
                         to='/myBookedTutors'
-                        activeClassName="text-sky-500 font-semibold"
-                        className="text-gray-300 text-xs md:text-base hover:text-sky-500 transition-colors"
+                        className={({ isActive }) =>
+                            `text-gray-300 text-sm md:text-base hover:text-sky-400 ${isActive ? 'text-sky-400 font-semibold' : ''}`
+                        }
                     >
                         My Booked Tutors
                     </NavLink>
                 </div>
 
-                <div className='flex flex-col lg:flex-row items-center gap-2'>
+                <div className='flex items-center gap-4'>
                     <ThemeToggle />
-                    <div className='relative'>
-                        {user?.photoURL && (
-                            <>
-                                <button onClick={handleUserName}>
-                                    <img
-                                        className='w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-sky-500 hover:shadow-lg cursor-pointer object-cover'
-                                        src={user.photoURL}
-                                        title={user?.displayName || 'User'}
-                                    />
-                                </button>
-                                {showUserName && (
-                                    <div className="absolute right-0 mt-2 px-2 py-2 bg-white text-black rounded shadow">
-                                        {user.displayName}
-                                    </div>
-                                )}
-                            </>
-                        )}
-                    </div>
+                    {user?.photoURL && (
+                        <div className='relative'>
+                            <button onClick={handleUserName}>
+                                <img
+                                    className='w-10 h-10 rounded-full border-2 border-sky-500 object-cover'
+                                    src={user.photoURL}
+                                    title={user.displayName || 'User'}
+                                />
+                            </button>
+                            {showUserName && (
+                                <div className="absolute right-0 mt-2 px-3 py-1 bg-white text-black text-sm rounded shadow">
+                                    {user.displayName}
+                                </div>
+                            )}
+                        </div>
+                    )}
 
-                    {user && user?.email ? (
+                    {user ? (
                         <button
                             onClick={handleLogout}
-                            className='btn btn-neutral rounded-full px-6 py-2 font-semibold text-white hover:bg-sky-500 transition-colors'
+                            className='btn btn-sm btn-neutral text-white rounded-full'
                         >
                             Logout
                         </button>
                     ) : (
-                        <div className='space-x-4'>
-                            <Link
-                                to='/login'
-                                className="btn btn-neutral rounded-full px-6 py-2 font-semibold text-white hover:bg-sky-500 transition-colors"
-                            >
+                        <div className='flex gap-2'>
+                            <Link to='/login' className='btn btn-sm btn-neutral text-white rounded-full'>
                                 Login
                             </Link>
-                            <Link
-                                to='/register'
-                                className="btn btn-neutral rounded-full px-6 py-2 font-semibold text-white hover:bg-sky-500 transition-colors"
-                            >
+                            <Link to='/register' className='btn btn-sm btn-neutral text-white rounded-full'>
                                 Register
                             </Link>
                         </div>

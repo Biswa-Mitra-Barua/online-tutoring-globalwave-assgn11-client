@@ -51,8 +51,8 @@ const TutorDetails = () => {
 
     return (
         <div className='my-10'>
-            <div className="py-12 bg-blue-800 bg-opacity-5">
-                <h1 className="text-center shadow-highlight text-4xl sm:text-5xl font-extrabold text-gray-500 drop-shadow-lg">
+            <div className="mx-4 md:px-0 py-12 mb-6 md:mb-0 bg-blue-800 bg-opacity-5">
+                <h1 className="text-center shadow-highlight text-3xl md:text-4xl font-extrabold text-gray-500 drop-shadow-lg">
                     Explore the Details of this Tutorial
                 </h1>
                 <p className="text-center text-lg text-gray-500 mt-3">
@@ -60,7 +60,7 @@ const TutorDetails = () => {
                 </p>
             </div>
 
-            <div className="flex justify-center items-center min-h-screen bg-gray-900 px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-center items-center min-h-screen bg-gray-900 px-6 md:px-8">
 
                 <div className="relative group flex flex-col md:flex-row max-w-4xl items-center gap-6 p-6 bg-white rounded-xl shadow-xl transform transition-transform duration-500 hover:scale-101">
 
